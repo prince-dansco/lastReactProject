@@ -39,9 +39,9 @@ const BlogPostSingle = () => {
 
   return (
     <div className="single-content move-left-to-center">
-      <h2> Title: {single.title}</h2>
-      <h2> Description: {single.description}</h2>
-      <h2> Language: {single.language}</h2>
+      <h2> Title: <span>{single.title}</span></h2>
+      <h2> Description: <span>{single.description}</span></h2>
+      <h2> Language: <span>{single.language}</span></h2>
       <div className="">
         <button onClick={handleDelete} className="single-btn">Delete</button>
         <Link to={`/blogs/${id}`} className="single-btn2">

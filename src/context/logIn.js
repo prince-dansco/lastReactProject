@@ -42,7 +42,7 @@ setData({
 
   return (
     <div className="container">
-      <h1 className="page-title">Sign In</h1>
+      {/* <h1 className="page-title">Sign In</h1> */}
       <form onSubmit={handleSubmit} className="form">
         <h2>Login to continue</h2>
         {error && <p style={{ color: "red" }}>{error}</p>}

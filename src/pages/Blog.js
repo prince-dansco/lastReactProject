@@ -80,7 +80,7 @@ const Blog = () => {
                 placeholder="enter description"
                 cols="61"
                 // onFocus={handleFocus}"
-                rows="10"
+                rows="6"
               ></textarea>
             </div>
             <button type="submit">addpost</button>
