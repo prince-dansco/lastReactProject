@@ -87,11 +87,14 @@ const ContextProvider = ({ children }) => {
     return response;
   };
   function logout() {
-    localStorage.removeItem("token");
-    setToken(null);
-    setIsLogin(false);
-    navigate("/signup");
-    setLoad(false);
+    const confirmLogout = window.confirm("Are you sure you want to logout?👺👺");
+    if(confirmLogout){
+      localStorage.removeItem("token");
+      setToken(null);
+      setIsLogin(false);
+      navigate("/signup");
+      setLoad(false);
+    }
   }
  
   const DeleteFunction = async (id, setError) => {
