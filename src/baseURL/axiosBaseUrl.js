@@ -1,6 +1,7 @@
 import axios from "axios";
 
 axios.defaults.baseURL = "https://clarkifre.pythonanywhere.com";
+
 axios.defaults.withCredentials = false;
 
 const Auth = (token) => {

@@ -13,9 +13,9 @@ import ErrorCom from "./component/ErrorCom";
 import Blog from "./pages/Blog";
 import Contact from "./pages/contact";
 import ContextProvider from "./context/contextProvider";
-import LogIn from "./context/logIn";
-import SignUp from "./context/SignUp";
-import ProtectRoute from "./protectRoute";
+import LogIn from "./component/logIn";
+import SignUp from "./component/SignUp";
+import ProtectRoute from "./component/protectRoute";
 import BlogPostSingle from "./pages/blogPostSingle";
 import SuccessM from "./pages/successM";
 import AddBlog from "./pages/addBlog";
@@ -32,14 +32,14 @@ function App() {
         }
       >
         <Route path="/" exact element={<Home />} />
-        <Route element={<ProtectRoute/>}>
-        <Route path="about" element={<About />} />
-        <Route path="blog" element={<Blog />} />
-        <Route path="blogs/:id" element={<AddBlog />} />
-        <Route path="service" element={<Services />} />
-        <Route path="successM" element={<SuccessM />} />
-        <Route path="single/:id" element={<BlogPostSingle />} />
-        <Route path="contact" element={<Contact />} />
+        <Route element={<ProtectRoute />}>
+          <Route path="about" element={<About />} />
+          <Route path="blog" element={<Blog />} />
+          <Route path="blogs/:id" element={<AddBlog />} />
+          <Route path="service" element={<Services />} />
+          <Route path="successM" element={<SuccessM />} />
+          <Route path="single/:id" element={<BlogPostSingle />} />
+          <Route path="contact" element={<Contact />} />
         </Route>
         <Route path="login" element={<LogIn />} />
         <Route path="signup" element={<SignUp />} />

@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import "../cssPages/navbar.css"
 import { Link, NavLink, Outlet } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "../image/reshot-icon-code-CZ2NMXUGQ8.svg";
@@ -18,7 +19,7 @@ const NavBar = () => {
       <div className="nav-content">
         <div className="logo">
           <img src={logo} alt="logo" />
-          <h1>Cohort Blog</h1>
+          <h1>Lorddansco</h1>
         </div>
         <div className={!click ? "links" : "links  return"}>
           <nav>

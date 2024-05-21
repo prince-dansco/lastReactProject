@@ -3,6 +3,7 @@ import Auth from "../baseURL/axiosBaseUrl";
 import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
 export const AuthContext = createContext();
 
 const ContextProvider = ({ children }) => {

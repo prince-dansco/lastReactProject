@@ -1,4 +1,5 @@
 import React from "react";
+import "../cssPages/success.css";
 import { Link } from "react-router-dom";
 
 const SuccessM = () => {
@@ -6,8 +7,8 @@ const SuccessM = () => {
     <div>
       <div className="success move-top-to-center">
         <h1>Deleted successfuly</h1>
-        <h2>Thank you</h2>
-        <Link to="/">go back to home</Link>
+        <h2>Thank you💥💥💥💥</h2>
+        <Link to="/">go back to home🏃‍♀️🚶‍♀️🚶‍♂️🏃‍♂️</Link>
       </div>
     </div>
   );

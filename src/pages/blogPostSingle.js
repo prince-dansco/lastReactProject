@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import "../cssPages/blog-single.css";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../context/contextProvider";
 import axios from "axios";

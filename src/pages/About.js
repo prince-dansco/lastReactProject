@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
+import "../cssPages/about.css";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
+import Spiner from "../component/Spiner";
 
 const AboutUs = () => {
   const [blogs, setBlogs] = useState([]);
@@ -17,9 +19,15 @@ const AboutUs = () => {
       })
       .then((res) => {
         console.log(res.data);
-        setBlogs(res.data.results);
+        if (res.data.results.length === 0) {
+          setError(
+            "No blog items found. Please go to the 👉blog page👈 and add a new blog post.🌟🔥"
+          );
+        } else {
+          setBlogs(res.data.results);
+          setError(null);
+        }
         setIsLoading(false);
-        setError(null);
       })
       .catch((e) => {
         if (e.response) {
@@ -38,27 +46,29 @@ const AboutUs = () => {
 
   console.log(blogs);
   return (
-    <div className="d-flex">
-      {isLoading && <p>Loading...</p>}
+    <div className="about-container">
+      {isLoading && <Spiner />}
       {error && <p>Error: {error}</p>}
 
       {blogs &&
         blogs.map((blog, index) => {
           const { title, language, description, id } = blog;
           return (
-            <div key={index} className="my-card move-left-to-center">
-              <h1 className="">
-                Title:<span>{title}</span>{" "}
-              </h1>
-              <h2>
-                Language: <span>{language}</span>
-              </h2>
-              <h2>
-                Description: <span>{description}</span>
-              </h2>
-              <NavLink to={`/single/${id}`}>
-                <button>View More</button>
-              </NavLink>
+            <div key={index} className="card move-left-to-center">
+              <div className="text-container">
+                <h1 className="">
+                  Title:<span>{title}</span>
+                </h1>
+                <h2>
+                  Language: <span>{language}</span>
+                </h2>
+                <h2>
+                  Description: <span>{description}</span>
+                </h2>
+                <NavLink to={`/single/${id}`}>
+                  <button>View More</button>
+                </NavLink>
+              </div>
             </div>
           );
         })}

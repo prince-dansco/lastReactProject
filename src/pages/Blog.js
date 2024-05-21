@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import "../cssPages/blog.css";
 import { AuthContext } from "../context/contextProvider";
 import { useNavigate } from "react-router-dom";
 

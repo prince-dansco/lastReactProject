@@ -1,11 +1,10 @@
 import React, { useContext, useState } from "react";
-import { AuthContext } from "./contextProvider";
+import { AuthContext } from "../context/contextProvider";
 import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const { error, setError,signup } = useContext(AuthContext);
   const [data, setData] = useState({
-    userName: "",
     email: "",
     password: "",
   });
@@ -20,7 +19,6 @@ const SignUp = () => {
     signup(data);
     console.log(data);
     setData({
-        userName: "",
         email: "",
         password: ""
     })
@@ -41,17 +39,7 @@ const SignUp = () => {
             {error}
           </p>
         )}
-        <label htmlFor="userName">UserName</label>
-        <input
-          type="text"
-          value={data.userName}
-          autoFocus
-          name="userName"
-          id="userName"
-          placeholder=" enter your userName"
-          onFocus={handleFocus}
-          onChange={handleChange}
-        />
+       
         <label htmlFor="email">Email</label>
         <input
           type="email"
@@ -77,7 +65,7 @@ const SignUp = () => {
         <button type="submit" className="btn">Sign Up</button>
 
         <p className="links">
-          Already have an account? Go to <span><Link to="/login">login</Link></span>
+          Already have an account? Go to <strong><Link to="/login">login</Link></strong>
         </p>
       </form>
     </div>
